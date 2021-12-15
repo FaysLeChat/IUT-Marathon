@@ -14,8 +14,6 @@
             </div>
             <p><h3>{{$s->nom}}</h3></p>
         </div>
-
-
         </a>
         @endforeach
     </div>

@@ -20,6 +20,11 @@
     <h3>Statut : </h3>{{$serie->statut}}
 
 
+
+
+
+
+
     <div>
         <a href="{{route('series.index')}}">Retour sur les Séries</a>
     </div>
