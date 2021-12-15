@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-
+Route::resource('users', '\App\Http\Controllers\ControllerUsers');
+//Route::get('/users/{id}', [\App\Http\Controllers\ControllerUsersx::class, 'show']);
 
 Route::resource('series','\App\Http\Controllers\SerieController');
