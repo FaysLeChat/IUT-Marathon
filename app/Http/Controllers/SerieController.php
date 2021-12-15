@@ -15,7 +15,7 @@ class SerieController extends Controller
     public function index()
     {
         $serie = Serie::all();
-        return view('index',['serie'=>$serie]);
+        return view('series.index',['serie'=>$serie]);
         //
     }
 

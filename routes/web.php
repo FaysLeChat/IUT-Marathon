@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[\App\Http\Controllers\ControllerIndex::class,'index']);
+
 
 
 Route::resource('series','\App\Http\Controllers\SerieController');
