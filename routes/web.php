@@ -20,3 +20,6 @@ Route::resource('users', '\App\Http\Controllers\ControllerUsers');
 
 Route::resource('series','\App\Http\Controllers\SerieController');
 Route::get('/series/saison/{saison}',[\App\Http\Controllers\SerieController::class,'saison']);
+Route::post('/series/saison/{saison}',function (){
+    return 'Formulaire recu';
+});

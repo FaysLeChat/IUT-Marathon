@@ -34,7 +34,7 @@
             </div>
         @else
             <div class="log">
-                <p> Bonjour {{ Auth::user()->name }}</p>
+                <p><a href="../users">Bonjour {{ Auth::user()->name }}</a></p>
             <!--
             @if (Auth::user())
                 <a href="#">Des liens spécifiques pour utilisateurs connectés..</a>

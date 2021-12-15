@@ -15,7 +15,7 @@ class indexController extends Controller
     public function index()
     {
         $series = Serie::orderBy('premiere', 'desc')->take(5)->get();
-        $series2 = Serie::orderBy('note', 'asc')->take(5)->get();
+        $series2 = Serie::select('*')->from('series')->where('note','!=','null')->orderBy('note', 'desc')->orderBy('nom', 'asc')->take(5)->get();
         $series3 = Serie::orderBy('genre', 'asc')->take(5)->get();
 
 
