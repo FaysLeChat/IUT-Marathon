@@ -1,6 +1,3 @@
-<div>
-    <h1>{{$serie->nom}}</h1>
-    <img src="../{{$serie-> urlImage}}"/>
 @extends('layouts.app')
 
 
