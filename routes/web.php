@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::resource('series','\App\Http\Controllers\SerieController');
+Route::get('/series/saison/{saison}',[\App\Http\Controllers\SerieController::class,'saison']);
