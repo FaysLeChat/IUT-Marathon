@@ -24,13 +24,39 @@
         @foreach($episode->all() as $ep)
             <img src="../{{$ep->urlImage}}"/>
             <p>Saison {{$ep->saison}} <br>Episode {{$ep->numero}}<br>{{$ep->nom}}</p>
-
         @endforeach
     </div>
     <br>
     <br>
+
+    <form action="" method="post">
+        <div>
+            <label for="toto">Commentaire :</label>
+            <br>
+            <input id="toto" type="text" name="nom"  placeholder="Saisir le nom">
+        </div>
+        <div>
+            <span>Note :</span>
+            <br>
+            <input id="actif_0" type="radio" name="note" value="0" >
+            <label for="actif_0">0</label>
+            <input id="actif_1" type="radio" name="note" value="1" >
+            <label for="actif_1">1</label>
+            <input id="actif_2" type="radio" name="note" value="2">
+            <label for="actif_2">2</label>
+            <input id="actif_3" type="radio" name="note" value="3" >
+            <label for="actif_3">3</label>
+            <input id="actif_4" type="radio" name="note" value="4">
+            <label for="actif_4">4</label>
+            <input id="actif_5" type="radio" name="note" value="5" >
+            <label for="actif_5">5</label>
+        </div>
+        <br>
+        <button type="reset">Annuler</button>
+        <button type="submit">Valider</button>
+
+    </form>
     <div>
         <a href="{{route('series.index')}}">Retour sur les Séries</a>
     </div>
-
 @endsection
