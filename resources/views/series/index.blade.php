@@ -7,7 +7,7 @@
                     <p><h3>Nom:{{$s->nom}}</h3></p>
                     <p><h3>Genre:{{$s->genre}}</h3></p>
                     <p><h3>Langue:{{$s->langue}}</h3></p>
-                    <p><h3>Nombre de saisons:{{count($s->episodes->unique('saison'))}}</h3></p>
+                    <p><h3>Nombre de saisons:{{$s->nbSaison()}}</h3></p>
                 </div>
 
         </li>

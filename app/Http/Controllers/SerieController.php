@@ -22,7 +22,7 @@ class SerieController extends Controller
      */
     public function index()
     {
-        $series = Serie::all();
+        $series = Serie::orderBy('nom', 'asc')->get();
         return view('series.index',['series'=>$series]);
         //
     }
