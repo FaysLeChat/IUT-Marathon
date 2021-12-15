@@ -1,1 +1,115 @@
 /* Put your style here */
+* {
+    font-family:'Montserrat';
+    margin: 0;
+}
+
+#main {
+    max-width: 1600px;
+    margin:0 auto;
+    justify-content: center;
+}
+
+/**************** header ********************/
+
+
+
+
+header a {
+    text-decoration: none;
+    color:black;
+    padding-left:30px;
+}
+
+
+.head {
+    display:flex;
+    justify-content:space-between;
+    height: 100px;
+    background-color: #FDBA21;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.head > nav > div{
+    display:flex;
+    align-items: center;
+}
+
+.log {
+    padding-right:30px;
+}
+
+.log p, .log a {
+    text-decoration: none;
+    color:black;
+    padding-right:20px;
+}
+
+header > a > img {
+    height:40px;
+}
+
+.logo {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+
+/************** fin header ******************/
+
+/************** serie ******************/
+
+
+.allseries {
+    display:flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.allseries li {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.allseries p {
+    font-size:0.8rem;
+    font-weight: 500;
+}
+
+.allseries li {
+    list-style: none;
+    padding-bottom: 20px;
+}
+
+.allseries img {
+    border-radius: 10px;
+    height:300px;
+    transition: ease-in-out 200ms;
+}
+
+.allseries img:hover {
+    height:280px;
+    border: 10px solid black;
+}
+
+/************** fin series ******************/
+
+/************** serie seule ******************/
+
+.serie {
+    display:flex;
+}
+
+.resume {
+    max-width: 700px;
+    text-align: justify;
+    padding-left: 40px;
+}
+
+
+
+/************** fin series seule ******************/
