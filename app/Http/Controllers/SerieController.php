@@ -48,7 +48,7 @@ class SerieController extends Controller
      */
     public function show($id)
     {
-        $serie = Serie::find($id);
+        $serie = Serie::findOrFail($id);
         return view('series.show',['serie'=>$serie]);
     }
 

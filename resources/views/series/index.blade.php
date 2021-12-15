@@ -1,18 +1,11 @@
 @extends('layouts.app')
+
 @section('content')
-<div>
-    <ul>
-    @foreach($serie->all() as $s)
-        <li>{{ $s -> nom }}</li>
-
-        @endforeach
-    </ul>
-
-</div>
 
 
+@foreach($serie->all() as $s)
+    <li>{{ $s -> nom }} <br><a href="series/{{$s->id}}"> <img src="{{$s-> urlImage}}" /></a></li>
 
-
-
+@endforeach
 
 @endsection
