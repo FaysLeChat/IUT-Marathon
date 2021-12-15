@@ -1,3 +1,6 @@
+<div>
+    <h1>{{$serie->nom}}</h1>
+    <img src="../{{$serie-> urlImage}}"/>
 @extends('layouts.app')
 
 
@@ -15,12 +18,9 @@
 
     </div>
 
-    <h3>Langue :</h3>{{$serie->langue}}
-    <h3>Statut : </h3>{{$serie->statut}}
-    <h3>Genre : </h3>{{$serie->genre}}
     <h3>Première : </h3>{{$serie->premiere}}
-    <h3>Note : </h3>{{$serie->note}}
     <h3>Avis :</h3>{{$serie->avis}}
+    <h3>Statut : </h3>{{$serie->statut}}
 
 
     <div>

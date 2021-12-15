@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class SerieController extends Controller
 {
+    public function saison($id){
+
+        $serie=Serie::findOrFail($id);
+        $nbsaions=count($serie->episodes->unique('saison'));
+        echo $nbsaions;
+
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +22,8 @@ class SerieController extends Controller
      */
     public function index()
     {
-        $serie = Serie::all();
-        return view('series.index',['serie'=>$serie]);
+        $series = Serie::all();
+        return view('series.index',['series'=>$series]);
         //
     }
 
@@ -26,7 +34,8 @@ class SerieController extends Controller
      */
     public function create()
     {
-        //
+        $test = Serie::select('*')->from('serie')->where('Gigolo', '=', '1')->get();
+        $test1 = Serie::all();
     }
 
     /**
