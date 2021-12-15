@@ -49,7 +49,8 @@ class ControllerUsers extends Controller
     {
         $user = User::find($id);
         $comment = Comment::all();
-        return view('users.show', ['user' => $user, 'comment' => $comment]);
+        $seen = User::seen();
+        return view('users.show', ['user' => $user, 'comment' => $comment, 'seen' => $seen]);
     }
 
     /**
