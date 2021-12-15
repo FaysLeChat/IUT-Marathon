@@ -1,3 +1,3 @@
 <div>
-    <p><strong>nom</strong></p>
+    <p><strong>{{$serie->nom}}</strong></p>
 </div>

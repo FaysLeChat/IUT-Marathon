@@ -15,7 +15,7 @@ class SerieController extends Controller
     public function index()
     {
         $serie = Serie::all();
-        return view('series.index',['serie'=>$serie]);
+        return view('index',['serie'=>$serie]);
         //
     }
 
@@ -48,7 +48,7 @@ class SerieController extends Controller
      */
     public function show($id)
     {
-        $serie = Serie::find($id);
+        $serie = Serie::findOrFail($id);
         return view('series.show',['serie'=>$serie]);
     }
 
