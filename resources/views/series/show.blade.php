@@ -5,7 +5,7 @@
 
 
     <div class="serie">
-        <img src="../{{$serie-> urlImage}}"/>
+    <img src="../{{$serie-> urlImage}}" />
         <div class="resume">
             <h1>{{$serie->nom}}</h1>
             <p>{{count($serie->episodes->unique('saison'))}} saisons - {{$serie->genre}} - {{$serie->langue}} - {{$serie->note}}/10</p>
