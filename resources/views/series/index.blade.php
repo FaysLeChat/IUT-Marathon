@@ -2,10 +2,11 @@
 
 @section('content')
 
+    <div class="allseries">
+        @foreach($serie->all() as $s)
+            <li><a href="series/{{$s->id}}"> <img src="{{$s-> urlImage}}" /></a><br><p>{{ $s -> nom }}</p></li>
 
-@foreach($serie->all() as $s)
-    <li>{{ $s -> nom }} <br><a href="series/{{$s->id}}"> <img src="{{$s-> urlImage}}" /></a></li>
-
-@endforeach
+        @endforeach
+    </div>
 
 @endsection

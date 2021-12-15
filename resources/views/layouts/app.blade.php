@@ -9,35 +9,50 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
-<header>
-    <a href="{{ url('/') }}">
-        Ma super appli
-    </a>
-</header>
-<!-- Authentication Links -->
-<nav>
-    <ul>
+<div class="head">
+    <header>
+        <a href="{{ url('/') }}">
+            <img src="/img/logo.png" alt="logo_header" />
+            <img src="/img/cinefeel_typo.png" alt="logo"/>
+        </a>
+    </header>
+
+    <div class="logo">
+
+    </div>
+    <!-- Authentication Links -->
+    <nav>
         @guest
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Register</a></li>
+            <div class="log">
+                <a href="{{ route('login') }}">Se connecter</a>
+                <a href="{{ route('register') }}">S'enregistrer</a>
+            </div>
         @else
-            <li> Bonjour {{ Auth::user()->name }}</li>
+            <div class="log">
+                <p> Bonjour {{ Auth::user()->name }}</p>
+            <!--
             @if (Auth::user())
-                <li><a href="#">Des liens spécifiques pour utilisateurs connectés..</a></li>
+                <a href="#">Des liens spécifiques pour utilisateurs connectés..</a>
             @endif
-            <li><a href="{{ route('logout') }}"
+                    -->
+                <a href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                    Logout
-                </a></li>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
+                    Déconnexion
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </div>
         @endguest
-    </ul>
-</nav>
+    </nav>
+</div>
+
 <div id="main">
     @yield('content')
 </div>
