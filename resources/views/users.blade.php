@@ -14,6 +14,7 @@
                     Adresse mail : {{ Auth::user()->email }}
                 </td>
             </tr>
+        {{$user->seen()}}
         </table>
     @endguest
 @endsection

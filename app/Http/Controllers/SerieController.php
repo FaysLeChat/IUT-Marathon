@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Serie;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SerieController extends Controller
 {
+    /*
     public function saison($id){
 
         $serie=Serie::findOrFail($id);
@@ -15,6 +17,7 @@ class SerieController extends Controller
 
 
     }
+    */
     /**
      * Display a listing of the resource.
      *
@@ -34,8 +37,10 @@ class SerieController extends Controller
      */
     public function create()
     {
+        /*
         $test = Serie::select('*')->from('serie')->where('Gigolo', '=', '1')->get();
         $test1 = Serie::all();
+        */
     }
 
     /**
@@ -58,6 +63,7 @@ class SerieController extends Controller
     public function show($id)
     {
         $serie = Serie::findOrFail($id);
+
         return view('series.show',['serie'=>$serie]);
     }
 
