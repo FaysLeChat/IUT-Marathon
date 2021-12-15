@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Episode;
 use App\Models\Serie;
 use Illuminate\Http\Request;
 
@@ -22,6 +23,7 @@ class SerieController extends Controller
      */
     public function index()
     {
+
         $series = Serie::orderBy('nom', 'asc')->get();
         return view('series.index',['series'=>$series]);
         //
@@ -58,7 +60,8 @@ class SerieController extends Controller
     public function show($id)
     {
         $serie = Serie::findOrFail($id);
-        return view('series.show',['serie'=>$serie]);
+        $episode = Episode::select('*')->from('episodes')->where('serie_id','=',$serie->id)->orderBy('id', 'asc')->get();
+        return view('series.show',['serie'=>$serie],['episode'=>$episode]);
     }
 
     /**
