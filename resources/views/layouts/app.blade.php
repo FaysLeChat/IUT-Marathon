@@ -20,7 +20,12 @@
             <img src="../img/logo.png" alt="logo_header" />
             <img src="../img/cinefeel_typo.png" alt="logo"/>
         </a>
+        <a href="{{ url('/') }}">Accueil</a>
+        <a href="{{ url('/series') }}">Toutes les séries</a>
+
+
     </header>
+
 
     <div class="logo">
 
@@ -34,7 +39,7 @@
             </div>
         @else
             <div class="log">
-                <p><a href="../users">Bonjour {{ Auth::user()->name }}</a></p>
+                <p> Bonjour {{ Auth::user()->name }} - <a href="{{ route('series') }}">Mon profil</a></p>
             <!--
             @if (Auth::user())
                 <a href="#">Des liens spécifiques pour utilisateurs connectés..</a>

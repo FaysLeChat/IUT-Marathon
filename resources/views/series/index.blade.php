@@ -12,7 +12,7 @@
                 <p class="ensavoir">En savoir +</p>
                 </span>
             </div>
-            <p><h3>{{$s->nom}}</h3></p>
+            <p class="nom_serie">{{$s->nom}}</p>
         </div>
         </a>
         @endforeach
