@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Serie;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -49,7 +50,9 @@ class ControllerUsers extends Controller
     {
         $user = User::find($id);
         $comment = Comment::all();
-        return view('users.show', ['user' => $user, 'comment' => $comment]);
+        $series = Serie::all();
+        $seen = User::select('*')->from('seen')->where('user_id', $id)->orderBy('date_seen', 'desc');
+        return view('users.show', ['user' => $user, 'comment' => $comment, 'series' => $series, 'seen' => $seen]);
     }
 
     /**

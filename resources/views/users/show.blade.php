@@ -11,23 +11,64 @@
         <img src="../{{ $user->avatar }}" height="50px" width="50px" />
         <b>{{ $user->name }}</b>
         <hr>
-        <h2>Séries récentes</h2>
+        <h2>Series récentes</h2>
+
         <hr>
-        <h2>Commentaires</h2>
+        <h2>Episodes récents (A retirer par la suite)</h2>
+        @foreach($seen->get() as $s)
+            <a href="/series/{{ \App\Models\Episode::select('*')->from('episodes')->where('id', $s->episode_id)->get()[0]->serie_id }}"><img src="/{{ \App\Models\Episode::select('*')->from('episodes')->where('id', $s->episode_id)->get()[0]->urlImage }}" /></a>
+        @endforeach
+        <hr>
+        <h2>Avis</h2>
         <table>
             @foreach($comment as $c)
-                @if($c->user_id === $user->id)
-                <tr>
-                    <td>
-                        {!! $c->note !!} étoiles
-                    </td>
-                    <td style="width: 90%">
-                        {!! $c->content !!}
-                    </td>
-                </tr>
+                @if($c->user_id === $user->id && $c->validated === 1)
+                    <tr>
+                        <td>
+                            {!! $c->note !!} étoiles
+                        </td>
+                        <td style="width: 90%">
+                            @foreach($series as $s)
+                                @if($s->id === $c->serie_id)
+                                    <p>{{ $s->nom }}</p>
+                                @endif
+                            @endforeach
+                            <p>Créé le {{ $c->created_at }} (Dernière modification le {{ $c->updated_at }})</p>
+                            <hr>
+                            {!! $c->content !!}
+                        </td>
+                    </tr>
                 @endif
             @endforeach
         </table>
+        @guest
+        @else
+            @if(Auth::user()->administrateur == 1)
+                <hr>
+                <h2>Avis à valider (ADMIN)</h2>
+                <table>
+                    @foreach($comment as $c)
+                        @if($c->user_id === $user->id && $c->validated === 0)
+                            <tr>
+                                <td>
+                                    {!! $c->note !!} étoiles
+                                </td>
+                                <td style="width: 90%">
+                                    @foreach($series as $s)
+                                        @if($s->id === $c->serie_id)
+                                            <p>{{ $s->nom }}</p>
+                                        @endif
+                                    @endforeach
+                                    <p>Créé le {{ $c->created_at }} (Dernière modification le {{ $c->updated_at }})</p>
+                                    <hr>
+                                    {!! $c->content !!}
+                                </td>
+                            </tr>
+                        @endif
+                    @endforeach
+                </table>
+            @endif
+        @endguest
     @else
         Pas d'utilisateur correspondant à cet id
     @endif
