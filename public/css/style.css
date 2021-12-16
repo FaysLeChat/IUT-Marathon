@@ -27,7 +27,7 @@ header a {
 
 .l a:hover, .log a:hover {
     color:white;
-    background-color: rgba(85,32,132,0.5);
+    background-color: rgba(85,32,132);
     padding : 40px 10px; 
      align-items: center;
      transition : ease-in-out 300ms;
@@ -143,6 +143,10 @@ header > a > img {
 
 /************** serie ******************/
 
+.triseries {
+    padding-bottom:30px;
+}
+
 .triseries a{
     padding-top :0px;
     text-decoration: none;
@@ -152,7 +156,7 @@ header > a > img {
 .triseries a:hover{
     padding-top : 0px;
     text-decoration: none;
-    color : red;
+    color : #552084;
 }
 
 .allseries {
@@ -165,8 +169,9 @@ header > a > img {
 }
 
 .allseries p {
-    font-size:0.8rem;
+    font-size:1rem;
     font-weight: 500;
+    padding-top:10px;
 }
 
 .allseries li {
@@ -208,11 +213,17 @@ header > a > img {
 }
 
 .serie-hover:hover {
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .serie-hover > p {
     font-size:1rem;
+    padding-top:10px;
+}
+
+.serie-hover > p:nth-child(1) {
+    padding-top:80px;
+
 }
 
 .serie-hover {
@@ -233,6 +244,7 @@ header > a > img {
 .nom_serie {
     padding-bottom: 30px;
 }
+
 
 .voirplus:hover {
     text-decoration: underline;
@@ -311,13 +323,84 @@ textarea {
     margin-top:20px;
 }
 
+.commentaire {
+    max-width:800px;
+}
+
+.commentaire td{
+    padding-top:40px;
+}
+
+.user_name {
+    font-weight: 700;
+}
+
+.date_commentaire {
+    font-size: 0.7rem;
+    
+}
+
+
+
 
 /************** fin series seule ******************/
 
+/************** début profil ******************/
+
+.user {
+    display:flex;
+    align-items:center;
+}
 
 
+.profilnom{
+font-size: 1.5rem; 
+font-weight:bold;
+}
 
+.top{
+    padding-top:20px;
+}
 
+.submit{
+    border-radius: 5px;
+    background-color: #FDBA21;
+    color:black;
+}
+
+.button-35 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background: #FDBA21;
+    border-radius: 999px;
+    box-shadow: #FDBA21 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+  }
+
+  .button-35:hover{
+    background: #552084;
+    border-radius: 999px;
+    box-shadow: #552084 0 10px 20px -10px;
+    transition: ease-in-out 300ms;
+  }
+
+/************** fin profil ******************/
 
 
 footer {
@@ -325,3 +408,83 @@ footer {
     background-color: #FDBA21;
     margin-top:30px;
 }
+
+/************** début responsive ******************/
+@media screen and (max-width: 379px) {
+   
+    #main {
+        max-width: 379px;
+        margin:0 auto;
+        justify-content: center;
+    }
+    
+    .accueil {
+        max-width: 350px;
+        margin: 0 auto;  
+    }
+
+//////
+
+
+    header a {
+        text-decoration: none;
+        color:black;
+        margin-left:10px;
+         padding-top: -15px;
+    }
+    
+    .head {
+        display:block;
+        height: 50px;
+        background-color: #FDBA21;
+        margin-bottom: 15px;
+        align-items: center;
+    
+    }
+    
+    .head > nav > div{
+        display:flex;
+        align-items: center;
+    }
+    
+    .log {
+        position:absolute;
+        margin-right:15px;
+        right: 0;
+        top:15px;
+    }
+    
+    .log p, .log a {
+        text-decoration: none;
+        color:black;
+        margin-right:10px;
+        padding : 5px; 
+    }
+    
+    header > a > img {
+        height:20px;
+    }
+    
+    .logo {
+        text-align: center;
+        padding-bottom: 25px;
+    }
+    
+    .l {
+        display: block;
+        padding-left:10px;
+    }
+    
+    .l a {
+        padding-left:5px;
+        padding-right:5px;
+        padding-top:-5px;
+        text-decoration: none;
+        color:black;
+    }
+    
+  }
+
+/************** fin responsive ******************/
+
+
