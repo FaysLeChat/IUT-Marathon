@@ -3,8 +3,6 @@
 
 @section('content')
 
-
-
     @guest()
         <div class="serie">
             <img src="../{{$serie-> urlImage}}" />
@@ -14,7 +12,6 @@
                 <h3>Resumé : </h3>
                 <p>{!!  $serie->resume!!}</p>
             </div>
-
         </div>
 
         <h3>Première : </h3>{{$serie->premiere}}
@@ -55,7 +52,8 @@
         </div>
         <br>
         <br>
-        <form method="post">
+        @auth
+        <form method="post" action="/series/{{$serie->id}}/vue">
             {{csrf_field()}}
             <div>
                 <label for="toto">Commentaire :</label>
@@ -81,8 +79,8 @@
             <br>
             <button type="reset">Annuler</button>
             <button type="submit">Valider</button>
-
         </form>
+        @endauth
     @endguest
         <div>
             <a href="{{route('series.index')}}">Retour sur les Séries</a>
