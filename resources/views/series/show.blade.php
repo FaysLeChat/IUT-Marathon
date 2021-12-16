@@ -2,6 +2,7 @@
 
 
 @section('content')
+<div class="serie_seule">
 
     @guest()
         <div class="serie">
@@ -11,24 +12,28 @@
                 <p>{{count($serie->episodes->unique('saison'))}} saisons - {{$serie->genre}} - {{$serie->langue}} - {{$serie->note}}/10</p>
                 <h3>Resumé : </h3>
                 <p>{!!  $serie->resume!!}</p>
+                <h3>Première : </h3>{{$serie->premiere}}
+                <h3>Statut : </h3>{{$serie->statut}}
             </div>
         </div>
-
-        <h3>Première : </h3>{{$serie->premiere}}
-        <h3>Avis :</h3>{{$serie->avis}}
-        <h3>Statut : </h3>{{$serie->statut}}
-
-
-
-
-        <h3>Liste Episode </h3>
+        
+        <p class="liste_episodes">Liste des épisodes </p>
         <div class="listeEpisode">
             @foreach($episode->all() as $ep)
-                <img src="../{{$ep->urlImage}}"/>
-                <p>Saison {{$ep->saison}} <br>Episode {{$ep->numero}}<br>{{$ep->nom}}</p>
+            <div class="episode">
+            <img src="../{{$ep->urlImage}}"/>
+                <div class="infos_episode">
+                    <p>Saison {{$ep->saison}} Episode {{$ep->numero}}</p>
+                    <p>{{$ep->nom}}</p>
+                </div>
+            </div>
             @endforeach
         </div>
+
+
+
         <br>
+        <h3>Avis :</h3>{{$serie->avis}}
         <br>
     @else
         <div class="serie">
@@ -38,32 +43,39 @@
                 <p>{{count($serie->episodes->unique('saison'))}} saisons - {{$serie->genre}} - {{$serie->langue}} - {{$serie->note}}/10</p>
                 <h3>Resumé : </h3>
                 <p>{!!  $serie->resume!!}</p>
+                <h3>Première : </h3>{{$serie->premiere}}
+                <h3>Statut : </h3>{{$serie->statut}}
             </div>
-
         </div>
 
-        <h3>Première : </h3>{{$serie->premiere}}
-        <h3>Avis :</h3>{{$serie->avis}}
-        <h3>Statut : </h3>{{$serie->statut}}
 
-        <h3>Liste Episode </h3>
+
+        <p class="liste_episodes">Liste des épisodes </p>
         <div class="listeEpisode">
             @foreach($episode->all() as $ep)
-                <img src="../{{$ep->urlImage}}"/>
-                <p>Saison {{$ep->saison}} <br>Episode {{$ep->numero}}<br>{{$ep->nom}}</p>
+            <div class="episode">
+            <img src="../{{$ep->urlImage}}"/>
+                <div class="infos_episode">
+                    <p>Saison {{$ep->saison}} Episode {{$ep->numero}}</p>
+                    <p>{{$ep->nom}}</p>
+                </div>
+            </div>
             @endforeach
         </div>
+
+
+
         <br>
+        <h3>Avis :</h3>{{$serie->avis}}
+
         <br>
         @auth
         <form method="post" action="/series/{{$serie->id}}/vue">
             {{csrf_field()}}
             <div>
-                <label for="toto">Commentaire :</label>
-                <br>
-                <input id="toto" type="text" name="nom"  placeholder="Saisir le commentaire">
+                <textarea name="commentaire" placeholder="Laisser un commentaire..."></textarea></p>
             </div>
-            <div>
+            <div class="note">
                 <span>Note :</span>
                 <br>
                 <input id="actif_0" type="radio" name="note" value="0" >
@@ -80,8 +92,10 @@
                 <label for="actif_5">5</label>
             </div>
             <br>
-            <button type="reset">Annuler</button>
-            <button type="submit">Valider</button>
+            <div class="boutons">
+            <button type="reset" class="button-34" role="button">Annuler</button>
+            <button type="submit" class="button-34" role="button">Valider</button>
+            </div>
         </form>
         <form method="post" action="/series/{{$serie->id}}/vue">
             @csrf
@@ -95,5 +109,6 @@
     <div>
             <a href="{{route('series.index')}}">Retour sur les Séries</a>
         </div>
+    </div>
 
 @endsection

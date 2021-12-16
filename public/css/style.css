@@ -12,8 +12,7 @@
 
 .accueil {
     max-width: 1400px;
-    margin: 0 auto;
-    
+    margin: 0 auto;  
 }
 
 /**************** header ********************/
@@ -24,7 +23,17 @@
 header a {
     text-decoration: none;
     color:black;
-    padding-left:30px;
+    margin-left:30px;
+     padding-top: -30px;
+}
+
+.head a:nth-child(2):hover, a:nth-child(3):hover {
+    color:white;
+    background-color: rgba(85,32,132,0.5);
+    padding : 10px; 
+     align-items: center;
+     padding-top: -30px;
+     transition : ease-in-out 300ms;
 }
 
 
@@ -35,6 +44,7 @@ header a {
     background-color: #FDBA21;
     margin-bottom: 50px;
     align-items: center;
+
 }
 
 .head > nav > div{
@@ -43,13 +53,14 @@ header a {
 }
 
 .log {
-    padding-right:30px;
+    margin-right:30px;
 }
 
 .log p, .log a {
     text-decoration: none;
     color:black;
-    padding-right:20px;
+    margin-right:20px;
+    padding : 10px; 
 }
 
 header > a > img {
@@ -63,6 +74,61 @@ header > a > img {
 
 
 /************** fin header ******************/
+
+
+/************** register/login ******************/
+
+.card-body {
+    max-width: 600px;
+    margin:0 auto;
+    
+}
+
+.card-body input {
+    margin:10px 5px;
+    padding: 5px 25px;
+}
+
+.card-body button {
+    margin-top:30px;
+    padding:5px 20px;
+}
+
+/* CSS */
+.button-34 {
+  background: #552084;
+  border-radius: 999px;
+  box-shadow: #552084 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+.trait {
+    width:35%;
+    height: 2px;
+    background-color: #552084;
+}
+
+
+
+
+/************** fin register/login ******************/
+
+
 
 /************** serie ******************/
 
@@ -93,6 +159,10 @@ header > a > img {
     
 }
 
+.titreallseries{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
 
 
 .hover {
@@ -141,12 +211,25 @@ header > a > img {
     padding-bottom: 30px;
 }
 
+.voirplus:hover {
+    text-decoration: underline;
+}
+
 /************** fin series ******************/
 
 /************** serie seule ******************/
 
+.serie_seule {
+    max-width:1400px;
+    margin:0 auto;
+}
+
 .serie {
     display:flex;
+}
+
+.serie img {
+    border-radius: 10px;
 }
 
 .resume {
@@ -155,6 +238,67 @@ header > a > img {
     padding-left: 40px;
 }
 
+.listeEpisode {
+    display:flex;
+    flex-wrap: wrap;
+
+}
+
+.liste_episodes {
+    padding-top:50px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.episode {
+    padding-right:10px;
+    max-width: 250px;
+    margin:0 auto;
+    height: 250px;
+    overflow: hidden;
+}
+
+.episode img {
+    border-radius: 10px;
+    height:140px;
+}
+
+.infos_episode p:nth-child(1) {
+    font-weight: 500;
+}
+
+
+.infos_episode p:nth-child(2) {
+    font-size: 0.8rem;
+}
+
+
+.note {
+    padding-top:20px;
+}
+
+.boutons {
+    padding-bottom: 20px;
+}
+
+textarea {
+    resize:none;
+    width: 700px;
+    height: 150px;
+    margin-top:20px;
+}
 
 
 /************** fin series seule ******************/
+
+
+
+
+
+
+
+footer {
+    height:50px;
+    background-color: #FDBA21;
+    margin-top:30px;
+}
