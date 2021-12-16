@@ -66,7 +66,7 @@
 
 
         <br>
-        <h3>Avis :</h3>{{$serie->avis}}
+        <h3>Commentaire :</h3>
 
         <br>
         @auth

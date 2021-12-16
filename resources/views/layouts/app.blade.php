@@ -14,6 +14,7 @@
 
 </head>
 <body>
+<div id='header_responsive'>
 <div class="head">
     <header>
         <a href="{{ url('/') }}">
@@ -22,9 +23,10 @@
         </a>
         </header>
         <div class="l">
-        <a href="{{ url('/') }}">Accueil</a>
-        <a href="{{ url('/series') }}">Toutes les séries</a>
+            <a href="{{ url('/') }}">Accueil</a>
+            <a href="{{ url('/series') }}">Toutes les séries</a>
         </div>
+
 
 
     <!-- Authentication Links -->
@@ -54,12 +56,13 @@
         @endguest
     </nav>
 </div>
+</div>
 
 <div id="main">
     @yield('content')
 </div>
 <!-- Scripts -->
 
-<footer>Cinefeel©</footer>
+<footer>Tous droits réservés - Cinefeel©</footer>
 </body>
 </html>
