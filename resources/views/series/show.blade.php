@@ -107,7 +107,7 @@
                         @if($serie->id === $c->serie_id)
                         <tr>
                             <td style="width: 90%">
-                                    {!!$c -> user_id !!}
+                                    Publié par l'id :{!!$c -> user_id !!}
                                     <br>
                                     {!! $c->note !!} étoiles
                                     <p>Créé le {{ $c->created_at }} (Dernière modification le {{ $c->updated_at }})</p>
