@@ -71,10 +71,14 @@
 
         <br>
         @auth
-        <form method="post" action="/series/{{$serie->id}}/vue">
+        <form method="post" action="{{route('series.store')}}">
             {{csrf_field()}}
             <div>
-                <textarea name="commentaire" placeholder="Laisser un commentaire..."></textarea></p>
+
+                <input type="hidden" value="{{$serie->id}}" name='id'>
+                <label for="toto">Commentaire :</label>
+                <br>
+                <input id="toto" type="text" name="commentaire"  placeholder="Saisir le commentaire">
             </div>
             <div class="note">
                 <span>Note :</span>
@@ -96,6 +100,7 @@
             <div class="boutons">
             <button type="reset" class="button-34" role="button">Annuler</button>
             <button type="submit" class="button-34" role="button">Valider</button>
+            <INPUT type=hidden name=afficher value=ok>
             </div>
         </form>
         <form method="post" action="/series/{{$serie->id}}/vue">
