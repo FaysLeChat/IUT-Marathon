@@ -48,6 +48,7 @@
 
         <h3>Liste Episode </h3>
         <div class="listeEpisode">
+
             @foreach($episode->all() as $ep)
                 <img src="../{{$ep->urlImage}}"/>
                 <p>Saison {{$ep->saison}} <br>Episode {{$ep->numero}}<br>{{$ep->nom}}</p>
@@ -94,6 +95,6 @@
 
     <div>
             <a href="{{route('series.index')}}">Retour sur les Séries</a>
-        </div>
+    </div>
 
 @endsection

@@ -3,7 +3,7 @@
 @section('content')
 <div class="accueil">
     @guest()
-        <p  >Les derniers ajouts :</p>
+        <p>Les derniers ajouts :</p>
         <br>
         <div class="allseries">
 
@@ -23,9 +23,6 @@
         </div>
         </a>
 
-            @endforeach
-        </div>
-        <br>
         <p  >Les mieux notées :</p>
         <br>
         <div class="allseries">
@@ -76,7 +73,7 @@
 
 
     @else
-        <p  >Les derniers ajouts:</p>
+        <p>Les derniers ajouts:</p>
         <br>
         <div class="allseries">
 
@@ -99,7 +96,7 @@
         <br>
 
 
-        <p  >Les mieux notées :</p>
+        <p>Les mieux notées :</p>
         <br>
         <div class="allseries">
 
@@ -121,10 +118,7 @@
         @endforeach
         </div>
         <br>
-
-
-        
-        <p  >Par genre :</p>
+        <p>Par genre :</p>
         <br>
         <div class="allseries">
             @foreach($series3->all() as $v)
