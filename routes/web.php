@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/','\App\Http\Controllers\IndexController');
-Route::resource('users', '\App\Http\Controllers\ControllerUsers');
+Route::resource('profile', '\App\Http\Controllers\ControllerUsers');
 //Route::get('/users/{id}', [\App\Http\Controllers\ControllerUsersx::class, 'show']);
 
 Route::resource('series','\App\Http\Controllers\SerieController');
+
+Route::get('/tri/{tri}',[\App\Http\Controllers\SerieController::class,'tri']);
 
 Route::post('/series/{id}/vue',[VueController::class,'nouveau']);
 //Route::get('/series/saison/{saison}',[\App\Http\Controllers\SerieController::class,'saison']);
