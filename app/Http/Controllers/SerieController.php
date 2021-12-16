@@ -48,7 +48,7 @@ class SerieController extends Controller
             return view('series.index', ['series' => $series]);
         }
         if($input=='note'){
-            $series = Serie::orderBy('note','asc')->get();
+            $series = Serie::orderBy('note','desc')->get();
             return view('series.index', ['series' => $series]);
         }
     }
