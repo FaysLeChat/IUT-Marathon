@@ -15,6 +15,10 @@
     margin: 0 auto;  
 }
 
+.img_error {
+    width:50%;
+}
+
 /**************** header ********************/
 
 
@@ -232,6 +236,7 @@ header > a > img {
 
 }
 
+
 .ensavoir:hover {
     text-decoration: underline;
 }
@@ -245,10 +250,25 @@ header > a > img {
     padding-bottom: 30px;
 }
 
+.voirplus {
+    background-color: #552084;
+    padding:25px 15px;
+    border-radius: 100%;
+    font-weight: 500;
+    transition: 300ms ease-in-out;
+}
+
+.voirplus a {
+    color:white;
+
+}
 
 .voirplus:hover {
-    text-decoration: underline;
+    background-color: #FDBA21;
+
 }
+
+
 
 /************** fin series ******************/
 
@@ -371,7 +391,7 @@ font-weight:bold;
 .button-35 {
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left:175xpx;
+    margin-left:175px;
     background: #FDBA21;
     border-radius: 999px;
     box-shadow: #FDBA21 0 10px 20px -10px;
@@ -400,24 +420,58 @@ font-weight:bold;
     transition: ease-in-out 300ms;
   }
 
+  
+.button-36 {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    margin-left:175px;
+    background: #FDBA21;
+    box-shadow: #FDBA21 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+  }
+
+  .button-36:hover{
+    background: #552084;
+    box-shadow: #552084 0 10px 20px -10px;
+    transition: ease-in-out 300ms;
+  }
+
 /************** fin profil ******************/
 
 
 footer {
     height:75px;
     background-color: #FDBA21;
-    padding-top:30px;
-    right:0;
-    position: relative;
-  padding:0;
   display:flex;
   text-align: right ;
   align-items: center;
-  padding-right: 20px;
   font-size:18px;
-  line-height:1.6;
   margin-bottom:0;
 
+  position:relative;
+  bottom:0;
+  width:100%;
+  height:50px;
+
+}
+
+.blanc {
+    color:white;
 }
 
 /************** début responsive ******************/
@@ -468,6 +522,25 @@ footer {
     .l {
         display: block;
         padding-left:10px;
+    }
+
+    .voirplus {
+        background-color: white;
+        color:black
+        padding:0;
+        border-radius: 0;
+        font-weight: 500;
+        transition: none;
+    }
+    
+    .voirplus a {
+        color:black;
+    
+    }
+    
+    .voirplus:hover {
+        background-color: white;
+    
     }
     
   }
