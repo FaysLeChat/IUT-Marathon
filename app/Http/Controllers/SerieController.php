@@ -30,10 +30,8 @@ class SerieController extends Controller
      */
     public function index()
     {
-
         $series = Serie::orderBy('nom', 'asc')->get();
         return view('series.index',['series'=>$series]);
-        //
     }
     public function tri($input)
     {

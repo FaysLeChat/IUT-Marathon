@@ -1,7 +1,14 @@
 @extends('layouts.app')
 @section('content')
+
+    {{--<div class="recherche">
+        <form method="POST" action="./series/{{$serie->id}}">
+            Rechercher une série : <input type="text" name="recherche">
+            <input id="submit" type="SUBMIT" value="Rechercher!">
+        </form>
+    </div>--}}
     <h3>trier Les séries</h3>
-    <form method="post" action="/series">
+    <form method="post" action="/series/">
         @csrf
         <div>
             <a href="/tri/nom">Nom</a>
@@ -28,3 +35,4 @@
         @endforeach
     </div>
 @endsection
+

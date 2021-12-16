@@ -6,6 +6,7 @@ use App\Models\Comment;
 use App\Models\Serie;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ControllerUsers extends Controller
 {
@@ -75,7 +76,15 @@ class ControllerUsers extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $name =  $request->name;
+        $email = $request->email;
+        $avatar = $request->avatar;
+        //User::update('update users set name=? where id = ?',[$name,$id]);
+        if(DB::table('users')->where('id', $id)->update(['name' => $name, 'email' => $email, 'avatar' => $avatar])) {
+            return 'Profil mis à jour !';
+        } else {
+            return 'Erreur';
+        }
     }
 
     /**
@@ -87,5 +96,16 @@ class ControllerUsers extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    function userSeries($id) {
+        $user = User::findOrFail($id);
+        $id_series = [];
+        foreach ($user->seen as $episode) {
+            if (!in_array($episode->serie->id, $id_series)) {
+                $id_series[] = $episode->serie->id;
+            }
+        }
+        return $id_series;
     }
 }

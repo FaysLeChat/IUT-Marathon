@@ -3,7 +3,7 @@
 @section('content')
 <div class="accueil">
     @guest()
-        <p  >Les derniers ajouts :</p>
+        <p class="titreallseries">Les derniers ajouts :</p>
         <br>
         <div class="allseries">
 
@@ -11,12 +11,12 @@
 
                 <div>
             <div class="hover">
-            <a href="./series/{{$s->id}}"><img src="{{$s-> urlImage}}"/>
+                <a href="./series/{{$s->id}}"><img src="{{$s-> urlImage}}"/>
                 <span class="serie-hover">
-                <p>{{$s->genre}}</p>
-                <p>{{$s->langue}}</p>
-                <p>{{count($s->episodes->unique('saison'))}} saison(s)</p>
-                <p class="ensavoir">En savoir +</p>
+                    <p>{{$s->genre}}</p>
+                    <p>{{$s->langue}}</p>
+                    <p>{{count($s->episodes->unique('saison'))}} saison(s)</p>
+                    <p class="ensavoir">En savoir +</p>
                 </span>
             </div>
             <p class="nom_serie">{{$s->nom}}</p>
@@ -26,7 +26,7 @@
             @endforeach
         </div>
         <br>
-        <p  >Les mieux notées :</p>
+        <p class="titreallseries" >Les mieux notées :</p>
         <br>
         <div class="allseries">
 
@@ -47,11 +47,16 @@
         </a>
                 
             @endforeach
+            <div class="voirplus">
+                <form method="post" action="/series/">
+                <div><a href="/tri/note">Voir +</a></div>
+                </form>
+            </div>
         </div>
 
 
         <br>
-        <p  >Par genre :</p>
+        <p class="titreallseries" >Par genre :</p>
         <br>
         <div class="allseries">
             @foreach($series3->all() as $v)
@@ -70,13 +75,18 @@
         </div>
         </a>
             @endforeach
+            <div class="voirplus">
+                <form method="post" action="/series/">
+                <div><a href="/tri/genre">Voir +</a></div>
+                </form>
+            </div>
         </div>
         <br>
 
 
 
     @else
-        <p  >Les derniers ajouts:</p>
+        <p class="titreallseries" >Les derniers ajouts:</p>
         <br>
         <div class="allseries">
 
@@ -99,7 +109,7 @@
         <br>
 
 
-        <p  >Les mieux notées :</p>
+        <p class="titreallseries" >Les mieux notées :</p>
         <br>
         <div class="allseries">
 
@@ -119,12 +129,17 @@
         </div>
         </a>            
         @endforeach
+        <div class="voirplus">
+                <form method="post" action="/series/">
+                <div><a href="/tri/note">Voir +</a></div>
+                </form>
+            </div>
         </div>
         <br>
 
 
         
-        <p  >Par genre :</p>
+        <p class="titreallseries" >Par genre :</p>
         <br>
         <div class="allseries">
             @foreach($series3->all() as $v)
@@ -142,6 +157,11 @@
         </div>
         </a>           
          @endforeach
+         <div class="voirplus">
+                <form method="post" action="/series/">
+                <div><a href="/tri/genre">Voir +</a></div>
+                </form>
+            </div>
         </div>
         <br>
     @endguest
