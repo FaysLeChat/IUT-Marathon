@@ -1,5 +1,15 @@
 @extends('layouts.app')
 @section('content')
+    <h3>trier Les séries</h3>
+    <form method="post" action="/series">
+        @csrf
+        <div>
+            <button type="submit" name="nom">Nom</button>
+            <button type="submit" name="genre">Genre</button>
+            <button type="submit" name="dateN">Date de sortie</button>
+            <button type="submit" name="note">Note</button>
+        </div>
+    </form>
     <div class="allseries">
         @foreach($series as $s)
         <div>

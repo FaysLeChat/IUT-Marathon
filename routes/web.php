@@ -21,6 +21,8 @@ Route::resource('users', '\App\Http\Controllers\ControllerUsers');
 
 Route::resource('series','\App\Http\Controllers\SerieController');
 
+Route::post('/series',[\App\Http\Controllers\SerieController::class,'tri']);
+
 Route::post('/series/{id}/vue',[VueController::class,'nouveau']);
 //Route::get('/series/saison/{saison}',[\App\Http\Controllers\SerieController::class,'saison']);
 Route::get('/series/saison/{saison}',[\App\Http\Controllers\SerieController::class,'saison']);
