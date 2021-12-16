@@ -74,6 +74,14 @@ class SerieController extends Controller
 
         //
     }
+    public function avis(Request  $request)
+    {
+        $this-> validate($request,['avisDeLaredaction'=>'required']);
+        $showAvis = Serie::find(request("id"));
+        $showAvis -> avis = request('avisDeLaredaction');
+        $showAvis->save();
+        return back();
+    }
 
     /**
      * Display the specified resource.
@@ -85,7 +93,8 @@ class SerieController extends Controller
     {
         $serie = Serie::findOrFail($id);
         $episode = Serie::select('*')->from('episodes')->where('serie_id','=',$serie->id)->orderBy('id', 'asc')->get();
-        return view('series.show',['serie'=>$serie],['episode'=>$episode]);
+        $showAvis = Serie::select('*')->from('series')->get();
+        return view('series.show',['serie'=>$serie,'episode'=>$episode,'showAvis'=>$showAvis]);
 
     }
 

@@ -16,6 +16,8 @@
                 <h3>Statut : </h3>{{$serie->statut}}
             </div>
         </div>
+
+
         
         <p class="liste_episodes">Liste des épisodes </p>
         <div class="listeEpisode">
@@ -47,6 +49,30 @@
                 <h3>Statut : </h3>{{$serie->statut}}
             </div>
         </div>
+        <label for="toto">Avis de la redaction :</label>
+        <table>
+            <tr>
+                <td>
+                    {{$serie->avis}}
+                </td>
+            </tr>
+        </table>
+        @if(Auth::user()->administrateur == 1)
+            <form method="post" action="/series/{{$serie->id}}">
+
+                <input type="hidden" name="id" value="{{$serie->id}}" />
+                {{csrf_field()}}
+                <div>
+                    <br>
+                    <input id="toto" type="text" name="avisDeLaredaction"  placeholder="Saisir l'avis de la redaction">
+                </div>
+                <div class="boutons">
+                    <button type="reset" class="button-34" role="button">Annuler</button>
+                    <button type="submit" class="button-34" role="button">Valider</button>
+                    <INPUT type=hidden name=afficher value=ok>
+                </div>
+            </form>
+        @endif
 
 
 
@@ -67,7 +93,7 @@
 
 
         <br>
-        <h3>Avis :</h3>{{$serie->avis}}
+        <h3>Avis :</h3>
 
         <br>
         @auth
