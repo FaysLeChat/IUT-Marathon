@@ -152,14 +152,14 @@
             <form method="post" action="/series/{{$serie->id}}/vue">
             @csrf
             <div>
-                <button type="submit">Vus</button>
+                <button type="submit">Série vue</button>
             </div>
         </form>
         @endauth
     @endguest
 
-    <div>
-            <a href="{{route('series.index')}}">Retour sur les Séries</a>
-    </div>
+    <div> <br/>
+            <a class="button-36" href="{{route('series.index')}}">Retour sur les séries</a>
+    </div> <br/>
 
 @endsection
