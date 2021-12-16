@@ -92,7 +92,7 @@
 
 
         <br>
-        <h3>Avis :</h3>
+        <h3>Commentaire :</h3>
 
         <br>
         @auth
