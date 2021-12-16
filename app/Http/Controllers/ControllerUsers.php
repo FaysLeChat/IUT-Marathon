@@ -88,4 +88,15 @@ class ControllerUsers extends Controller
     {
         //
     }
+
+    function userSeries($id) {
+        $user = User::findOrFail($id);
+        $id_series = [];
+        foreach ($user->seen as $episode) {
+            if (!in_array($episode->serie->id, $id_series)) {
+                $id_series[] = $episode->serie->id;
+            }
+        }
+        return $id_series;
+    }
 }
