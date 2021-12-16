@@ -52,6 +52,7 @@
 
         <p class="liste_episodes">Liste des épisodes </p>
         <div class="listeEpisode">
+
             @foreach($episode->all() as $ep)
             <div class="episode">
             <img src="../{{$ep->urlImage}}"/>
@@ -108,7 +109,6 @@
 
     <div>
             <a href="{{route('series.index')}}">Retour sur les Séries</a>
-        </div>
     </div>
 
 @endsection
