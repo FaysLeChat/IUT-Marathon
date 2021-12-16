@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Cinefeel') }}</title>
     <!-- Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,37 +20,33 @@
             <img src="/img/logo.png" alt="logo_header" />
             <img src="/img/cinefeel_typo.png" alt="logo"/>
         </a>
+        </header>
+        <div class="l">
         <a href="{{ url('/') }}">Accueil</a>
         <a href="{{ url('/series') }}">Toutes les séries</a>
+        </div>
 
 
-    </header>
-
-
-    <div class="logo">
-
-    </div>
     <!-- Authentication Links -->
     <nav>
         @guest
             <div class="log">
-                <a></a>
-                <a href="{{ route('login') }}">Se connecter</a>
-                <a href="{{ route('register') }}">S'enregistrer</a>
+                <p><a href="{{ route('login') }}">Se connecter</a></p>
+                <p><a href="{{ route('register') }}">S'enregistrer</a></p>
             </div>
         @else
             <div class="log">
-                <p> Bonjour {{ Auth::user()->name }} - <a href="/profile">Mon profil</a></p>
+                <p> Bonjour {{ Auth::user()->name }} - <a href="/profil">Mon profil</a></p>
             <!--
             @if (Auth::user())
                 <a href="#">Des liens spécifiques pour utilisateurs connectés..</a>
             @endif
                     -->
-                <a href="{{ route('logout') }}"
+                <p><a href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     Déconnexion
-                </a>
+                </a></p>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
                 </form>
