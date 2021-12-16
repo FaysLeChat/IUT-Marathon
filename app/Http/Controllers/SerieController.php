@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Episode;
 use App\Models\Serie;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\Console\Input\Input;
 
 
@@ -28,10 +30,8 @@ class SerieController extends Controller
      */
     public function index()
     {
-
         $series = Serie::orderBy('nom', 'asc')->get();
         return view('series.index',['series'=>$series]);
-        //
     }
     public function tri($input)
     {
@@ -44,7 +44,7 @@ class SerieController extends Controller
             return view('series.index', ['series' => $series]);
         }
         if($input=='premiere'){
-            $series = Serie::orderBy('premiere','asc')->get();
+            $series = Serie::orderBy('premiere','desc')->get();
             return view('series.index', ['series' => $series]);
         }
         if($input=='note'){
@@ -74,6 +74,17 @@ class SerieController extends Controller
      */
     public function store(Request $request)
     {
+        $this-> validate($request,['commentaire'=>'required',
+                                    'note'=>'required']);
+        $comments = new Comment();
+        $comments -> content = request('commentaire');
+        $comments -> note = request('note');
+        $comments -> user_id = Auth::user()->id;
+        $comments -> validated = 0;
+        $comments -> serie_id= request('id');
+        $comments->save();
+        return back();
+
         //
     }
 
@@ -86,8 +97,9 @@ class SerieController extends Controller
     public function show($id)
     {
         $serie = Serie::findOrFail($id);
-        $episode = Episode::select('*')->from('episodes')->where('serie_id','=',$serie->id)->orderBy('id', 'asc')->get();
+        $episode = Serie::select('*')->from('episodes')->where('serie_id','=',$serie->id)->orderBy('id', 'asc')->get();
         return view('series.show',['serie'=>$serie],['episode'=>$episode]);
+
     }
 
     /**
@@ -98,7 +110,7 @@ class SerieController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**

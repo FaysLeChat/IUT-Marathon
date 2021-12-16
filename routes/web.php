@@ -26,6 +26,5 @@ Route::get('/tri/{tri}',[\App\Http\Controllers\SerieController::class,'tri']);
 Route::post('/series/{id}/vue',[VueController::class,'nouveau']);
 //Route::get('/series/saison/{saison}',[\App\Http\Controllers\SerieController::class,'saison']);
 Route::get('/series/saison/{saison}',[\App\Http\Controllers\SerieController::class,'saison']);
-Route::post('/series/saison/{saison}',function (){
-    return 'Formulaire recu';
-});
+Route::post('/series/saison/{saison}',[\App\Http\Controllers\SerieController::class,'store']);
+

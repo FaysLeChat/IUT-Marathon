@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<div class="accueil">   
-<h3>Trier les séries</h3>
-    <form method="post" action="/series">
+<div class="accueil">
+    <h3>trier Les séries</h3>
+    <form method="post" action="/series/">
         @csrf
         <div class="triseries">
             <a href="/tri/nom">Nom</a>

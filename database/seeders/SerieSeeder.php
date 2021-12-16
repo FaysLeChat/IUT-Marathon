@@ -27,7 +27,7 @@ class SerieSeeder extends Seeder {
                 "genre" => $elt->genre,
                 "urlImage" => $elt->urlImage,
                 "avis" => $elt->avis,
-                "urlAvis" => $elt->urlAvis,
+                "urlAvis" => $elt->urlAvis,vghg
             ]);
         }
     }

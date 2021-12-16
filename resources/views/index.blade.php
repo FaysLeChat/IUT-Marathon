@@ -24,6 +24,11 @@
         </a>
 
             @endforeach
+            <div class="voirplus">
+                <form method="post" action="/series/">
+                    <div><a href="/tri/premiere">Voir +</a></div>
+                </form>
+            </div>
         </div>
         <br>
         <p class="titreallseries" >Les mieux notées :</p>
@@ -105,6 +110,11 @@
         </div>
         </a>
             @endforeach
+            <div class="voirplus">
+                <form method="post" action="/series/">
+                    <div><a href="/tri/premiere">Voir +</a></div>
+                </form>
+            </div>
         </div>
         <br>
 
