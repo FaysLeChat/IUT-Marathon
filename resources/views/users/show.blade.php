@@ -12,10 +12,12 @@
         <b>{{ $user->name }}</b>
         <hr>
         <h2>Series récentes</h2>
-
+        @foreach($seen->take(5)->get() as $s)
+            <a href="/series/{{ \App\Models\Episode::select('*')->from('episodes')->where('id', $s->episode_id)->get()[0]->serie_id }}"><img src="/{{ \App\Models\Episode::select('*')->from('series')->where('id', \App\Models\Episode::select('*')->from('episodes')->where('id', $s->episode_id)->get()[0]->serie_id)->get()[0]->urlImage }}" /></a>
+        @endforeach
         <hr>
-        <h2>Episodes récents (A retirer par la suite)</h2>
-        @foreach($seen->get() as $s)
+        <h2>Episodes récents</h2>
+        @foreach($seen->take(5)->get() as $s)
             <a href="/series/{{ \App\Models\Episode::select('*')->from('episodes')->where('id', $s->episode_id)->get()[0]->serie_id }}"><img src="/{{ \App\Models\Episode::select('*')->from('episodes')->where('id', $s->episode_id)->get()[0]->urlImage }}" /></a>
         @endforeach
         <hr>
