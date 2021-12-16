@@ -92,13 +92,14 @@ class SerieController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show($id)
     {
         $serie = Serie::findOrFail($id);
         $episode = Serie::select('*')->from('episodes')->where('serie_id','=',$serie->id)->orderBy('id', 'asc')->get();
-        return view('series.show',['serie'=>$serie],['episode'=>$episode]);
+        $commentaire = Comment::select('*')->from('comments')->get();
+        return view('series.show',['serie'=>$serie,'episode'=>$episode,'commentaire'=>$commentaire]);
 
     }
 

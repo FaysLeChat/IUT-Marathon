@@ -65,7 +65,6 @@
         </div>
 
 
-
         <br>
         <h3>Avis :</h3>{{$serie->avis}}
 
@@ -103,7 +102,25 @@
             <INPUT type=hidden name=afficher value=ok>
             </div>
         </form>
-        <form method="post" action="/series/{{$serie->id}}/vue">
+            <table>
+                @foreach($commentaire->all() as $c)
+                        @if($serie->id === $c->serie_id)
+                        <tr>
+                            <td style="width: 90%">
+                                    {!!$c -> user_id !!}
+                                    <br>
+                                    {!! $c->note !!} étoiles
+                                    <p>Créé le {{ $c->created_at }} (Dernière modification le {{ $c->updated_at }})</p>
+                                    <hr>
+                                    {!! $c->content !!}
+                                </td>
+                        </tr>
+
+                    @endif
+                @endforeach
+            </table>
+
+            <form method="post" action="/series/{{$serie->id}}/vue">
             @csrf
             <div>
                 <button type="submit">Vus</button>
