@@ -6,6 +6,8 @@ use App\Models\Episode;
 use App\Models\Serie;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Symfony\Component\Console\Input\Input;
+
 
 class SerieController extends Controller
 {
@@ -30,6 +32,25 @@ class SerieController extends Controller
         $series = Serie::orderBy('nom', 'asc')->get();
         return view('series.index',['series'=>$series]);
         //
+    }
+    public function tri($input)
+    {
+        if($input=='nom'){
+            $series = Serie::orderBy('nom','asc')->get();
+            return view('series.index', ['series' => $series]);
+        }
+        if($input=='genre') {
+            $series = Serie::orderBy('genre', 'asc')->get();
+            return view('series.index', ['series' => $series]);
+        }
+        if($input=='premiere'){
+            $series = Serie::orderBy('premiere','asc')->get();
+            return view('series.index', ['series' => $series]);
+        }
+        if($input=='note'){
+            $series = Serie::orderBy('note','asc')->get();
+            return view('series.index', ['series' => $series]);
+        }
     }
 
     /**

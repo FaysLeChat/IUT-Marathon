@@ -18,6 +18,9 @@
         <h3>Avis :</h3>{{$serie->avis}}
         <h3>Statut : </h3>{{$serie->statut}}
 
+
+
+
         <h3>Liste Episode </h3>
         <div class="listeEpisode">
             @foreach($episode->all() as $ep)
@@ -80,9 +83,16 @@
             <button type="reset">Annuler</button>
             <button type="submit">Valider</button>
         </form>
+        <form method="post" action="/series/{{$serie->id}}/vue">
+            @csrf
+            <div>
+                <button type="submit">Vus</button>
+            </div>
+        </form>
         @endauth
     @endguest
-        <div>
+
+    <div>
             <a href="{{route('series.index')}}">Retour sur les Séries</a>
         </div>
 
