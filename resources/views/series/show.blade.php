@@ -16,7 +16,18 @@
                 <h3>Statut : </h3>{{$serie->statut}}
             </div>
         </div>
+        <label for="toto">Avis de la redaction :</label>
+        <table>
+            <tr>
+                <td>
+                    {{$serie->avis}}
+                </td>
+                @if($serie->nom == "Sherlock")
+                    <td><video controls width="500" ><source src="/video/sherlock.mp4"type="video/mp4">cc</video></td>
+                @endif
 
+            </tr>
+        </table>
 
         
         <p class="liste_episodes">Liste des épisodes </p>
@@ -55,6 +66,10 @@
                 <td>
                     {{$serie->avis}}
                 </td>
+                @if($serie->nom == "Sherlock")
+                    <td><video controls width="500" ><source src="/video/sherlock.mp4"type="video/mp4">cc</video></td>
+                @endif
+
             </tr>
         </table>
         @if(Auth::user()->administrateur == 1)
