@@ -98,7 +98,7 @@ class ControllerUsers extends Controller
         //
     }
 
-    function userSeries($id) {
+    public static function userSeries($id) {
         $user = User::findOrFail($id);
         $id_series = [];
         foreach ($user->seen as $episode) {
