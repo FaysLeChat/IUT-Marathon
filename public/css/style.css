@@ -108,6 +108,7 @@ header > a > img {
     height:100%;
     color:white;
     transition: opacity 300ms;
+    border-radius: 10px;
 }
 
 .serie-hover:hover {
@@ -116,6 +117,11 @@ header > a > img {
 
 .serie-hover > p {
     font-size:1rem;
+}
+
+.serie-hover {
+    padding-top:10px;
+
 }
 
 .ensavoir:hover {
