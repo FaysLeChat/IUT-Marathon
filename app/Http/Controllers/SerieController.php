@@ -13,16 +13,6 @@ use Symfony\Component\Console\Input\Input;
 
 class SerieController extends Controller
 {
-    /*
-    public function saison($id){
-
-        $serie=Serie::findOrFail($id);
-        $nbsaions=count($serie->episodes->unique('saison'));
-        echo $nbsaions;
-
-
-    }
-    */
     /**
      * Display a listing of the resource.
      *
@@ -60,10 +50,7 @@ class SerieController extends Controller
      */
     public function create()
     {
-        /*
-        $test = Serie::select('*')->from('serie')->where('Gigolo', '=', '1')->get();
-        $test1 = Serie::all();
-        */
+
     }
 
     /**
