@@ -18,8 +18,6 @@
 /**************** header ********************/
 
 
-
-
 header a {
     text-decoration: none;
     color:black;
@@ -27,19 +25,17 @@ header a {
      padding-top: -30px;
 }
 
-.head a:nth-child(2):hover, a:nth-child(3):hover {
+.l a:hover, .log a:hover {
     color:white;
     background-color: rgba(85,32,132,0.5);
-    padding : 10px; 
+    padding : 40px 10px; 
      align-items: center;
-     padding-top: -30px;
      transition : ease-in-out 300ms;
 }
 
 
 .head {
     display:flex;
-    justify-content:space-between;
     height: 100px;
     background-color: #FDBA21;
     margin-bottom: 50px;
@@ -53,7 +49,10 @@ header a {
 }
 
 .log {
+    position:absolute;
     margin-right:30px;
+    right: 0;
+    top:30px;
 }
 
 .log p, .log a {
@@ -72,6 +71,18 @@ header > a > img {
     padding-bottom: 50px;
 }
 
+.l {
+    display: block;
+    padding-left:20px;
+}
+
+.l a {
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:-10px;
+    text-decoration: none;
+    color:black;
+}
 
 /************** fin header ******************/
 
