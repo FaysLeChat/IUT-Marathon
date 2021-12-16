@@ -1,59 +1,149 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="accueil">
     @guest()
-        <b>Les derniers ajoutée:</b>
+        <p  >Les derniers ajouts :</p>
         <br>
         <div class="allseries">
 
             @foreach($series->all() as $s)
-                <li><a href="series/{{$s->id}}"> <img src="{{$s-> urlImage}}" /></a><br><p>{{ $s -> nom }}</p></li>
+
+                <div>
+            <div class="hover">
+            <a href="./series/{{$s->id}}"><img src="{{$s-> urlImage}}"/>
+                <span class="serie-hover">
+                <p>{{$s->genre}}</p>
+                <p>{{$s->langue}}</p>
+                <p>{{count($s->episodes->unique('saison'))}} saison(s)</p>
+                <p class="ensavoir">En savoir +</p>
+                </span>
+            </div>
+            <p class="nom_serie">{{$s->nom}}</p>
+        </div>
+        </a>
+
             @endforeach
         </div>
         <br>
-        <b>Les mieux notée :</b>
+        <p  >Les mieux notées :</p>
         <br>
         <div class="allseries">
 
             @foreach($series2->all() as $c)
-                <li><a href="series/{{$c->id}}"> <img src="{{$c-> urlImage}}" /></a><br><p>{{ $c -> nom }}</p></li>
+
+            <div>
+            <div class="hover">
+            <a href="./series/{{$c->id}}"><img src="{{$c-> urlImage}}"/>
+                <span class="serie-hover">
+                <p>{{$c->genre}}</p>
+                <p>{{$c->langue}}</p>
+                <p>{{count($c->episodes->unique('saison'))}} saison(s)</p>
+                <p class="ensavoir">En savoir +</p>
+                </span>
+            </div>
+            <p class="nom_serie">{{$c->nom}}</p>
+        </div>
+        </a>
+                
             @endforeach
         </div>
+
+
         <br>
-        <b>Par genre :</b>
+        <p  >Par genre :</p>
         <br>
         <div class="allseries">
             @foreach($series3->all() as $v)
-                <li><a href="series/{{$v->id}}"> <img src="{{$v-> urlImage}}" /></a><br><p>{{ $v -> nom }}</p></li>
+
+                 <div>
+            <div class="hover">
+            <a href="./series/{{$v->id}}"><img src="{{$v-> urlImage}}"/>
+                <span class="serie-hover">
+                <p>{{$v->genre}}</p>
+                <p>{{$v->langue}}</p>
+                <p>{{count($v->episodes->unique('saison'))}} saison(s)</p>
+                <p class="ensavoir">En savoir +</p>
+                </span>
+            </div>
+            <p class="nom_serie">{{$v->nom}}</p>
+        </div>
+        </a>
             @endforeach
         </div>
         <br>
+
+
+
     @else
-        < <b>Les derniers ajoutée:</b>
+        <p  >Les derniers ajouts:</p>
         <br>
         <div class="allseries">
 
             @foreach($series->all() as $s)
-                <li><a href="series/{{$s->id}}"> <img src="{{$s-> urlImage}}" /></a><br><p>{{ $s -> nom }}</p></li>
+            <div>
+            <div class="hover">
+            <a href="./series/{{$s->id}}"><img src="{{$s-> urlImage}}"/>
+                <span class="serie-hover">
+                <p>{{$s->genre}}</p>
+                <p>{{$s->langue}}</p>
+                <p>{{count($s->episodes->unique('saison'))}} saison(s)</p>
+                <p class="ensavoir">En savoir +</p>
+                </span>
+            </div>
+            <p class="nom_serie">{{$s->nom}}</p>
+        </div>
+        </a>
             @endforeach
         </div>
         <br>
-        <b>Les mieux notée :</b>
+
+
+        <p  >Les mieux notées :</p>
         <br>
         <div class="allseries">
 
             @foreach($series2->all() as $c)
-                <li><a href="series/{{$c->id}}"> <img src="{{$c-> urlImage}}" /></a><br><p>{{ $c -> nom }}</p></li>
-            @endforeach
+
+            <div>
+            <div class="hover">
+            <a href="./series/{{$c->id}}"><img src="{{$c-> urlImage}}"/>
+                <span class="serie-hover">
+                <p>{{$c->genre}}</p>
+                <p>{{$c->langue}}</p>
+                <p>{{count($c->episodes->unique('saison'))}} saison(s)</p>
+                <p class="ensavoir">En savoir +</p>
+                </span>
+            </div>
+            <p class="nom_serie">{{$c->nom}}</p>
+        </div>
+        </a>            
+        @endforeach
         </div>
         <br>
-        <b>Par genre :</b>
+
+
+        
+        <p  >Par genre :</p>
         <br>
         <div class="allseries">
             @foreach($series3->all() as $v)
-                <li><a href="series/{{$v->id}}"> <img src="{{$v-> urlImage}}" /></a><br><p>{{ $v -> nom }}</p></li>
-            @endforeach
+            <div>
+            <div class="hover">
+            <a href="./series/{{$v->id}}"><img src="{{$v-> urlImage}}"/>
+                <span class="serie-hover">
+                <p>{{$v->genre}}</p>
+                <p>{{$v->langue}}</p>
+                <p>{{count($v->episodes->unique('saison'))}} saison(s)</p>
+                <p class="ensavoir">En savoir +</p>
+                </span>
+            </div>
+            <p class="nom_serie">{{$v->nom}}</p>
+        </div>
+        </a>           
+         @endforeach
         </div>
         <br>
     @endguest
+</div>
 @endsection
