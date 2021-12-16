@@ -91,7 +91,6 @@
         </div>
 
 
-
         <br>
         <h3>Avis :</h3>
 
@@ -102,9 +101,7 @@
             <div>
 
                 <input type="hidden" value="{{$serie->id}}" name='id'>
-                <label for="toto">Commentaire :</label>
-                <br>
-                <input id="toto" type="text" name="commentaire"  placeholder="Saisir le commentaire">
+                <textarea name="commentaire" placeholder="Laisser un commentaire..."></textarea></p>
             </div>
             <div class="note">
                 <span>Note :</span>
@@ -129,7 +126,30 @@
             <INPUT type=hidden name=afficher value=ok>
             </div>
         </form>
-        <form method="post" action="/series/{{$serie->id}}/vue">
+            <table class="commentaire">
+                @foreach($commentaire->all() as $c)
+                @if($serie->id === $c->serie_id)
+                        <tr>
+                            <td style="width: 90%">
+                                <p class="user_name">Publié par l'id : {!!$c -> user_id !!}</p>
+                                @if($c->validated == 0)
+                                    <p class="Valide">Non Validé</p>
+                                @endif
+                                <br>
+                                {!! $c->note !!} étoiles
+                                <p class="date_commentaire">Créé le {{ $c->created_at }} (Dernière modification le {{ $c->updated_at }})</p>
+                                <hr>
+                                {!! $c->content !!}
+                                <br>
+
+                            </td>
+                        </tr>
+
+                    @endif
+                @endforeach
+            </table>
+
+            <form method="post" action="/series/{{$serie->id}}/vue">
             @csrf
             <div>
                 <button type="submit">Vus</button>
