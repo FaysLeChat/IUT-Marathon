@@ -33,15 +33,24 @@ class SerieController extends Controller
         return view('series.index',['series'=>$series]);
         //
     }
-    public function tri(Request $request)
+    public function tri($input)
     {
-        $input = $request->input('genre');
-        if(isset($input)){
-            //$series = Serie::orderBy('genre', 'asc')->get();
-            return redirect()->back;
-            echo "genre bouton";
+        if($input=='nom'){
+            $series = Serie::orderBy('nom','asc')->get();
+            return view('series.index', ['series' => $series]);
         }
-
+        if($input=='genre') {
+            $series = Serie::orderBy('genre', 'asc')->get();
+            return view('series.index', ['series' => $series]);
+        }
+        if($input=='premiere'){
+            $series = Serie::orderBy('premiere','asc')->get();
+            return view('series.index', ['series' => $series]);
+        }
+        if($input=='note'){
+            $series = Serie::orderBy('note','asc')->get();
+            return view('series.index', ['series' => $series]);
+        }
     }
 
     /**

@@ -4,17 +4,17 @@
     <form method="post" action="/series">
         @csrf
         <div>
-            <button type="submit" name="nom">Nom</button>
-            <button type="submit" name="genre">Genre</button>
-            <button type="submit" name="dateN">Date de sortie</button>
-            <button type="submit" name="note">Note</button>
+            <a href="/tri/nom">Nom</a>
+            <a href="/tri/genre">Genre</a>
+            <a href="/tri/premiere">Date de sortie</a>
+            <a href="/tri/note">Note</a>
         </div>
     </form>
     <div class="allseries">
         @foreach($series as $s)
         <div>
             <div class="hover">
-            <a href="./series/{{$s->id}}"><img src="{{$s->urlImage}}"/>
+            <a href="/series/{{$s->id}}"><img src="{{asset($s->urlImage)}}"/>
                 <span class="serie-hover">
                 <p>{{$s->genre}}</p>
                 <p>{{$s->langue}}</p>
