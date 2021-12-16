@@ -17,8 +17,8 @@
 <div class="head">
     <header>
         <a href="{{ url('/') }}">
-            <img src="../img/logo.png" alt="logo_header" />
-            <img src="../img/cinefeel_typo.png" alt="logo"/>
+            <img src="./img/logo.png" alt="logo_header" />
+            <img src="./img/cinefeel_typo.png" alt="logo"/>
         </a>
         <a href="{{ url('/') }}">Accueil</a>
         <a href="{{ url('/series') }}">Toutes les séries</a>
@@ -34,12 +34,13 @@
     <nav>
         @guest
             <div class="log">
+                <a></a>
                 <a href="{{ route('login') }}">Se connecter</a>
                 <a href="{{ route('register') }}">S'enregistrer</a>
             </div>
         @else
             <div class="log">
-                <p> Bonjour {{ Auth::user()->name }} - <a href="{{ route('series') }}">Mon profil</a></p>
+                <p> Bonjour {{ Auth::user()->name }} - <a href="/profil">Mon profil</a></p>
             <!--
             @if (Auth::user())
                 <a href="#">Des liens spécifiques pour utilisateurs connectés..</a>
@@ -62,5 +63,7 @@
     @yield('content')
 </div>
 <!-- Scripts -->
+
+<footer>Cinefeel©</footer>
 </body>
 </html>
