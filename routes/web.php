@@ -27,7 +27,10 @@ Route::post('/series/{id}/vue',[VueController::class,'nouveau']);
 //Route::get('/series/saison/{saison}',[\App\Http\Controllers\SerieController::class,'saison']);
 Route::get('/series/saison/{saison}',[\App\Http\Controllers\SerieController::class,'saison']);
 Route::post('/series/saison/{saison}',[\App\Http\Controllers\SerieController::class,'store']);
+Route::post('/series/{id}',[\App\Http\Controllers\SerieController::class,'avis']);
+
 
 Route::fallback(function() {
     return view('404'); // la vue 404.blade.php
  });
+

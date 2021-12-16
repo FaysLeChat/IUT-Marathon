@@ -13,16 +13,6 @@ use Symfony\Component\Console\Input\Input;
 
 class SerieController extends Controller
 {
-    /*
-    public function saison($id){
-
-        $serie=Serie::findOrFail($id);
-        $nbsaions=count($serie->episodes->unique('saison'));
-        echo $nbsaions;
-
-
-    }
-    */
     /**
      * Display a listing of the resource.
      *
@@ -60,10 +50,7 @@ class SerieController extends Controller
      */
     public function create()
     {
-        /*
-        $test = Serie::select('*')->from('serie')->where('Gigolo', '=', '1')->get();
-        $test1 = Serie::all();
-        */
+
     }
 
     /**
@@ -87,6 +74,14 @@ class SerieController extends Controller
 
         //
     }
+    public function avis(Request  $request)
+    {
+        $this-> validate($request,['avisDeLaredaction'=>'required']);
+        $showAvis = Serie::find(request("id"));
+        $showAvis -> avis = request('avisDeLaredaction');
+        $showAvis->save();
+        return back();
+    }
 
     /**
      * Display the specified resource.
@@ -98,8 +93,12 @@ class SerieController extends Controller
     {
         $serie = Serie::findOrFail($id);
         $episode = Serie::select('*')->from('episodes')->where('serie_id','=',$serie->id)->orderBy('id', 'asc')->get();
+
+        $showAvis = Serie::select('*')->from('series')->get();
+
         $commentaire = Comment::select('*')->from('comments')->get();
-        return view('series.show',['serie'=>$serie,'episode'=>$episode,'commentaire'=>$commentaire]);
+        return view('series.show',['serie'=>$serie,'episode'=>$episode,'commentaire'=>$commentaire,'showAvis'=>$showAvis]);
+
 
     }
 
