@@ -39,7 +39,7 @@
             </div>
         @else
             <div class="log">
-                <p> Bonjour {{ Auth::user()->name }} - <a href="{{ route('series') }}">Mon profil</a></p>
+                <p> Bonjour {{ Auth::user()->name }} - <a href="/profile">Mon profil</a></p>
             <!--
             @if (Auth::user())
                 <a href="#">Des liens spécifiques pour utilisateurs connectés..</a>
