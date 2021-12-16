@@ -132,6 +132,17 @@ header > a > img {
 
 /************** serie ******************/
 
+.triseries a{
+    padding-top :0px;
+    text-decoration: none;
+    color:black;
+}
+
+.triseries a:hover{
+    padding-top : 0px;
+    text-decoration: none;
+    color : red;
+}
 
 .allseries {
     display:flex;
@@ -186,7 +197,7 @@ header > a > img {
 }
 
 .serie-hover:hover {
-    opacity:0.5;
+    opacity: 0.5;
 }
 
 .serie-hover > p {
@@ -195,6 +206,7 @@ header > a > img {
 
 .serie-hover {
     padding-top:10px;
+    
 
 }
 

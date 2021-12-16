@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
-    <h3>trier Les séries</h3>
+<div class="accueil">   
+<h3>Trier les séries</h3>
     <form method="post" action="/series">
         @csrf
-        <div>
+        <div class="triseries">
             <a href="/tri/nom">Nom</a>
             <a href="/tri/genre">Genre</a>
             <a href="/tri/premiere">Date de sortie</a>
@@ -27,5 +28,6 @@
         </a>
         @endforeach
     </div>
+</div>
 @endsection
 
