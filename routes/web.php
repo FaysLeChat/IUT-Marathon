@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/','\App\Http\Controllers\IndexController');
-Route::resource('users', '\App\Http\Controllers\ControllerUsers');
+Route::resource('profile', '\App\Http\Controllers\ControllerUsers');
 //Route::get('/users/{id}', [\App\Http\Controllers\ControllerUsersx::class, 'show']);
 
 Route::resource('series','\App\Http\Controllers\SerieController');
