@@ -17,8 +17,8 @@
 <div class="head">
     <header>
         <a href="{{ url('/') }}">
-            <img src="./img/logo.png" alt="logo_header" />
-            <img src="./img/cinefeel_typo.png" alt="logo"/>
+            <img src="/img/logo.png" alt="logo_header" />
+            <img src="/img/cinefeel_typo.png" alt="logo"/>
         </a>
         </header>
         <div class="l">
@@ -36,7 +36,7 @@
             </div>
         @else
             <div class="log">
-                <p> Bonjour {{ Auth::user()->name }} - <a href="/profil">Mon profil</a></p>
+                <p> Bonjour {{ Auth::user()->name }} - <a href="/profile">Mon profil</a></p>
             <!--
             @if (Auth::user())
                 <a href="#">Des liens spécifiques pour utilisateurs connectés..</a>
