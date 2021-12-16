@@ -8,7 +8,7 @@
                 <span class="serie-hover">
                 <p>{{$s->genre}}</p>
                 <p>{{$s->langue}}</p>
-                <p>{{count($s->episodes->unique('saison'))}} saison(s)</p>
+                <p>{{$s->nbSaison()}} saison(s)</p>
                 <p class="ensavoir">En savoir +</p>
                 </span>
             </div>

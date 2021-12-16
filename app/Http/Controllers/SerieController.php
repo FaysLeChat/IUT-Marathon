@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Episode;
 use App\Models\Serie;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SerieController extends Controller
 {
+    /*
     public function saison($id){
 
         $serie=Serie::findOrFail($id);
@@ -15,6 +18,7 @@ class SerieController extends Controller
 
 
     }
+    */
     /**
      * Display a listing of the resource.
      *
@@ -22,6 +26,7 @@ class SerieController extends Controller
      */
     public function index()
     {
+
         $series = Serie::orderBy('nom', 'asc')->get();
         return view('series.index',['series'=>$series]);
         //
@@ -34,8 +39,10 @@ class SerieController extends Controller
      */
     public function create()
     {
+        /*
         $test = Serie::select('*')->from('serie')->where('Gigolo', '=', '1')->get();
         $test1 = Serie::all();
+        */
     }
 
     /**
@@ -58,7 +65,8 @@ class SerieController extends Controller
     public function show($id)
     {
         $serie = Serie::findOrFail($id);
-        return view('series.show',['serie'=>$serie]);
+        $episode = Episode::select('*')->from('episodes')->where('serie_id','=',$serie->id)->orderBy('id', 'asc')->get();
+        return view('series.show',['serie'=>$serie],['episode'=>$episode]);
     }
 
     /**

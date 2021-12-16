@@ -17,8 +17,8 @@
 <div class="head">
     <header>
         <a href="{{ url('/') }}">
-            <img src="./img/logo.png" alt="logo_header" />
-            <img src="./img/cinefeel_typo.png" alt="logo"/>
+            <img src="../img/logo.png" alt="logo_header" />
+            <img src="../img/cinefeel_typo.png" alt="logo"/>
         </a>
         <a href="{{ url('/') }}">Accueil</a>
         <a href="{{ url('/series') }}">Toutes les séries</a>
