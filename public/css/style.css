@@ -10,6 +10,12 @@
     justify-content: center;
 }
 
+.accueil {
+    max-width: 1400px;
+    margin: 0 auto;
+    
+}
+
 /**************** header ********************/
 
 
@@ -87,9 +93,7 @@ header > a > img {
     
 }
 
-.allseries img:hover {
 
-}
 
 .hover {
     position:relative;
@@ -126,6 +130,15 @@ header > a > img {
 
 .ensavoir:hover {
     text-decoration: underline;
+}
+
+.allseries a {
+    text-decoration: none;
+    color:black;
+}
+
+.nom_serie {
+    padding-bottom: 30px;
 }
 
 /************** fin series ******************/
