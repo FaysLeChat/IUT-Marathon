@@ -146,7 +146,7 @@
                 @if($serie->id === $c->serie_id)
                         <tr>
                             <td style="width: 90%">
-                                <p class="user_name">Publié par l'id : {!!$c -> user_id !!}</p>
+                                <p class="user_name">Publié par : {!!$c -> utilisateur->name !!}</p>
                                 @if($c->validated == 0)
                                     <p class="Valide">Non Validé</p>
                                 @endif

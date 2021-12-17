@@ -31,6 +31,6 @@ Route::post('/series/{id}',[\App\Http\Controllers\SerieController::class,'avis']
 
 
 Route::fallback(function() {
-    return view('404'); // la vue 404.blade.php
+    return view('errors.404'); // la vue 404.blade.php
  });
 
