@@ -1,4 +1,8 @@
-# Marathon21
+# Projet Marathon (Groupe 21)
+
+## Installation
+
+### L'environnement
 
 Après avoir récupéré le projet, ne pas oublier de :
 
@@ -16,7 +20,7 @@ Après avoir récupéré le projet, ne pas oublier de :
   php artisan key:generate
   ```
 
-## La base de données 
+### La base de données 
 
 
 **Ne pas oublier de configurer votre base de données dans le fichier `.env`**
@@ -32,7 +36,7 @@ Des commentaires aléatoires ont été ajoutés. Des épisodes ont été vus en 
 
 Ou, utiliser la base de données qui vous est proposée sur le serveur marathon.
 
-## Le serveur
+### Le serveur
 
 Dès que la base de données est opérationnelle, vous pouvez vous connecter en utilisant l'un des 3 utilisateurs créés :
 
